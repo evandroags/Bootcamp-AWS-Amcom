@@ -1,0 +1,39 @@
+<section>
+<div class="">
+  <div class="row">
+    <div class="col-lg-4">
+      <form (ngSubmit)="register(regform)" #regform="ngForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="user">Usuário</label>
+          <input type="text" name="user" id="user" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" name="password" id="password" ngModel class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Registrar</button>
+      </form>
+    </div>
+  </div>
+  <br/>
+  <div *ngIf="confirmCode" class="row message-row">
+    <h3>Verifique seu e-mail para obter o código de validação e insira-o aqui:</h3>
+    <div class="col-lg-4">
+      <form (ngSubmit)="validateAuthCode(codeform)" #codeform="ngForm">
+        <div class="form-group">
+          <label for="code">Código</label>
+          <input type="text" name="code" id="code" ngModel class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Validar código</button>
+      </form>
+    </div>
+  </div>
+  <div *ngIf="codeWasConfirmed" class="row message-row">
+    <h3>O código de verificação foi confirmado, clique <a routerLink="/login"> aqui </a> para fazer o login</h3>
+  </div>
+</div>
+</section>

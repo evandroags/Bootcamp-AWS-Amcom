@@ -1,0 +1,68 @@
+<section>
+  <p *ngIf="bAuthenticated == 1">
+    Olá <strong>{{ username }}</strong>, você está autenticado!
+  </p>
+
+  <div class="wrapper">
+  <h2>Armazenamento Amazon S3</h2>
+
+  <span class="buttonLog">
+    <button (click)="enviaLog()">Gerar Log</button>
+  </span>
+
+  <span class="formFile">
+  <form enctype="multipart/form-data">
+    <input type="file" name="file" id="dataFile">
+    <button type="submit" (click)="enviar($event)">Enviar</button>
+  </form>
+  </span>
+  
+  <div class="table">
+  
+    <div class="row header blue">
+      <div class="cell">
+        ARQUIVO
+      </div>
+      <div class="cell">
+        ENVIADO EM
+      </div>
+      <div class="cell">
+        TAMANHO
+      </div>
+      <div class="cell">
+        TIPO
+      </div>
+      <div class="cell">
+        BAIXAR
+      </div>
+      <div class="cell">
+        DELETAR
+      </div>
+    </div>
+
+    <div class="row" *ngFor="let key of Object.keys(_data)">
+      <div class="cell" data-title="Key">
+        {{_data[key].Key}}
+      </div>
+      <div class="cell" data-title="LastModified">
+        {{_data[key].LastModified | date}}
+      </div>
+      <div class="cell" data-title="Size">
+        {{_data[key].Size}} KB
+      </div>
+      <div class="cell" data-title="StorageClass">
+        {{_data[key].StorageClass}}
+      </div>
+      <div class="cell" data-title="baixar" (click)="baixar(_data[key].Key)" >
+        <a class="baix" href="{{ _data[key].ETag }}" download="{{ _data[key].Key }}">Baixar</a>
+      </div>
+      <div class="cell" data-title="deletar">
+        <button class="dele" (click)="deletar(username, _data[key].Key)">Deletar</button>
+      </div>
+    </div>
+    
+  </div>
+
+</div>
+
+</section>

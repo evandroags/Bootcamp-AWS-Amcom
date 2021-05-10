@@ -1,0 +1,139 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    background: #2b2b2b;
+  }
+  p {
+    font-family: "Helvetica Neue", Helvetica, Arial;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0 1%;
+    width: 100%;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  h2{
+    color: #ffffff;
+    width: 50%;
+    float: left;
+  }
+
+  span.buttonLog{
+    width: auto;
+    float: left;
+    height: 35px;
+    padding: 0 1%;
+    margin-top: 20px;
+    border-radius: 3px;
+  }
+  span.buttonLog button{
+    height: 34px;
+    width: 130%;
+    float: left;
+    font-weight: 400;
+    border-radius: 3px;
+    border: none;
+    background-color: #e9e9e9;
+  }
+
+  span.buttonLog button:hover{
+    background-color: grey;
+    color: #fff;
+  }
+
+  span.formFile{
+    width: 38.7%;
+    float: right;
+    margin-top: 20px;
+    border-radius: 3px;
+    background-color: #e9e9e9;
+  }
+
+  span form{ 
+    width: 100%;
+  }
+
+  span form button{ 
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 20%;
+    float: right;
+    padding: 7px;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #2f9b3d;
+  }
+
+  .dele, .baix{
+    border-radius: 3px;
+    border: none;
+    padding: 8px 16px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  .dele{
+    background-color: crimson;
+  }
+  .dele:hover{
+    background-color:darkred;
+  }
+
+  .baix{
+    background-color:orange;
+  }
+  .baix:hover{
+    background-color:rgb(190, 125, 3);
+  }
+
+  a:link{
+    text-decoration: none;
+  }
+
+  span form button:hover{ 
+    background-color: #30c543;
+  }
+
+  span form input{ 
+    border-radius: 5px;
+    float: left;
+    width: 80%;
+    background-color: #ffffff;
+    height: 33px;
+    padding: 5px;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+    padding: 0 1%;
+    max-width: 100%;
+  }
+  .table {
+    margin: 0 0 40px 0;
+    width: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    display: table;
+  }
+  .row {
+    display: table-row;
+    background: #f6f6f6;
+  }
+  .row:nth-of-type(odd) {
+    background: #e9e9e9;
+  }
+  .row.blue {
+    background: #2980b9;
+    color: #ffffff;
+  }
+  .cell {
+    padding: 6px 12px;
+    display: table-cell;
+  }
