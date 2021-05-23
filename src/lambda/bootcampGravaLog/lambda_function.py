@@ -4,7 +4,7 @@ from botocore.exceptions import ClientError
 def lambda_handler(event, context):
     
     s3 = boto3.client("s3")
-    bucket = "" #NomeBucket
+    bucket = "bootcampcloudamcomstorage"
     
     dthr = datetime.datetime.today() - datetime.timedelta(hours=3)
     data_hora = str(dthr.strftime("%d/%m/%Y %H:%M:%S"))
@@ -32,11 +32,11 @@ def lambda_handler(event, context):
     try:
        s3.download_file(bucket, pathFile, lamba_tmp) 
     except ClientError as e:
-       s3.upload_file(lamba_tmp, bucket, pathFile)
-       s3.download_file(bucket, pathFile, lamba_tmp)
        with open(lamba_tmp, 'a') as fd:
            fd.write('LOG Bootcamp AWS AMcom\n')
            fd.write(' \n')
+       s3.upload_file(lamba_tmp, bucket, pathFile)
+       s3.download_file(bucket, pathFile, lamba_tmp)
 
     with open(lamba_tmp, 'a') as fd:
         fd.write('[Data/Hora: ' + data_hora + '][Operação: ' + tipo + ']' + namefile + '\n')
